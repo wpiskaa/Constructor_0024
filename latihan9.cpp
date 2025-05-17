@@ -54,4 +54,5 @@ public:
             cout << p->nama << " mengembalikan " << b->judul << endl;
         }
     }
+    friend class Admin;
 }

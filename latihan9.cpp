@@ -55,4 +55,14 @@ public:
         }
     }
     friend class Admin;
-}
+};
+
+class Admin {
+    public:
+        void lihat(Peminjam* p, Buku* b) {
+            cout << "Statistik: " << p->nama << " meminjam "
+                 << p->totalPinjam << " buku. Status buku: "
+                 << (b->dipinjam ? "Dipinjam" : "Tersedia") << endl;
+        }
+    
+}    

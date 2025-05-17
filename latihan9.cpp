@@ -64,5 +64,25 @@ class Admin {
                  << p->totalPinjam << " buku. Status buku: "
                  << (b->dipinjam ? "Dipinjam" : "Tersedia") << endl;
         }
+        void ubahLevel(Petugas* t, string baru) {
+            t->level = baru;
+            cout << "Level petugas diubah ke " << baru << endl;
+        }
+    };
+    
+    int main() {
+        Buku b("Dasar C++");
+        Peminjam p("Piska");
+        Petugas t("Rika", "Normal");
+        Admin a;
+    
+        t.pinjam(&b, &p);
+        a.lihat(&p, &b);
+        t.kembali(&b, &p);
+        a.ubahLevel(&t, "Admin");
+    
+        return 0;
     
 }    
+
+

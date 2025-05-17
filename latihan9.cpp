@@ -16,3 +16,14 @@ public:
     friend class Petugas;
     friend class Admin;
 };
+class Peminjam {
+    private:
+        string nama;
+        int totalPinjam;
+    
+    public:
+        Peminjam(string n) : nama(n), totalPinjam(0) {}
+        friend class Petugas;
+        friend class Admin;
+    };
+    

@@ -45,4 +45,13 @@ public:
             cout << p->nama << " meminjam " << b->judul << endl;
         }
     }
+    void kembali(Buku *b, Peminjam *p)
+    {
+        if (b->dipinjam)
+        {
+            b->dipinjam = false;
+            p->totalPinjam--;
+            cout << p->nama << " mengembalikan " << b->judul << endl;
+        }
+    }
 }

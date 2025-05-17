@@ -1,14 +1,22 @@
 #include <iostream>
 using namespace std;
 
-class angka{
+class angka
+{
 private:
     int *arr;
     int panjang;
+
 public:
-    angka(int); //Constructor
-    ~angka(); //Destructor
-void cetakData();
-void isiData();
+    angka(int); // Constructor
+    ~angka();   // Destructor
+    void cetakData();
+    void isiData();
 };
-    
+// Definisi member Functon
+angka::angka(int i)
+{ // Constructor
+    panjang = i;
+    arr = new int[i];
+    isiData();
+}

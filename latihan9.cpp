@@ -16,14 +16,33 @@ public:
     friend class Petugas;
     friend class Admin;
 };
-class Peminjam {
-    private:
-        string nama;
-        int totalPinjam;
-    
-    public:
-        Peminjam(string n) : nama(n), totalPinjam(0) {}
-        friend class Petugas;
-        friend class Admin;
-    };
-    
+class Peminjam
+{
+private:
+    string nama;
+    int totalPinjam;
+
+public:
+    Peminjam(string n) : nama(n), totalPinjam(0) {}
+    friend class Petugas;
+    friend class Admin;
+};
+
+class Petugas
+{
+private:
+    string nama, level;
+
+public:
+    Petugas(string n, string l) : nama(n), level(l) {}
+
+    void pinjam(Buku *b, Peminjam *p)
+    {
+        if (!b->dipinjam)
+        {
+            b->dipinjam = true;
+            p->totalPinjam++;
+            cout << p->nama << " meminjam " << b->judul << endl;
+        }
+    }
+}
